@@ -3,7 +3,7 @@ var operando = 50;
 
 var resultado = operador * operando;
 
-alert(operador + ' x ' + operando + ' = ' + resultado );
+alert(operador + ' x ' + operando + ' = ' + resultado);
 
 var nome = 'Markin';
 var sobrenome = 'Dessanti';
@@ -15,10 +15,10 @@ var segundoValor = 'azul';
 
 resultado = primeiroValor - segundoValor;
 
-alert(primeiroValor + ' - ' + segundoValor + ' = ' + resultado );
+alert(primeiroValor + ' - ' + segundoValor + ' = ' + resultado);
 
 var segundoValor = '3';
 
 resultado = primeiroValor - segundoValor;
 
-alert(primeiroValor + ' - ' + segundoValor + ' = ' + resultado );
+alert(primeiroValor + ' - ' + segundoValor + ' = ' + resultado);
