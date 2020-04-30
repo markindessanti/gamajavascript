@@ -1,8 +1,8 @@
-console.log('Javascript carregado!');
+// console.log('Javascript carregado!');
 
 function validacao() {
 	cpf = document.getElementById('txtCpf').value;
-	console.log('Iniciando validação CPF: ' + cpf);
+	// console.log('Iniciando validação CPF: ' + cpf);
 	resultadoValidacao = validaCPF(cpf);
 
 	if (resultadoValidacao) {
@@ -20,7 +20,7 @@ function validaCPF(cpf) {
 	} else {
 		var numeros = cpf.substring(0, 9);
 		var digitos = cpf.substring(9);
-		var soma = 0
+		var soma = 0;
 		
 		for (let i = 10; i > 1; i--) {
 			soma += numeros.charAt(10 - i) * i;
@@ -31,6 +31,21 @@ function validaCPF(cpf) {
 		var resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
 
 		if (resultado != digitos.charAt(0)) {
+			return false;
+		}
+
+		numeros = cpf.substring(0, 10);
+		soma = 0;
+
+		for (let i = 11; i > 1; i--) {
+			soma += numeros.charAt(11 - i) * i;
+			// console.log(numeros.charAt(11 - i), i, numeros.charAt(11 - i) * i, soma);		
+		}
+
+		// Validação segundo dígito verificador
+		resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+
+		if (resultado != digitos.charAt(1)) {
 			return false;
 		}
 
