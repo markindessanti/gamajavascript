@@ -27,6 +27,13 @@ function validaCPF(cpf) {
 			// console.log(numeros.charAt(10 - i), i, numeros.charAt(10 - i) * i, soma);		
 		}
 
+		// Validação primeiro dígito verificador
+		var resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+
+		if (resultado != digitos.charAt(0)) {
+			return false;
+		}
+
 		return true;
 	}
 }
